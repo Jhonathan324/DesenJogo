@@ -137,8 +137,8 @@ class TiposAnaliseView(View):
 
 class FormulariosView(View):
     def get(self, request, *args, **kwargs):
-        formularios = AnaliseProcesso.objects.all()
-        return render(request, 'formularios.html', {'formularios': formularios})
+        AnaliseProcesso = AnaliseProcesso.objects.all()
+        return render(request, 'AnaliseProcesso.html', {'AnaliseProcessos': AnaliseProcesso})
 
 
 class OcorrenciasView(View):

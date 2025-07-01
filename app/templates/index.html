@@ -14,19 +14,22 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Menus Esquerda -->
             <ul class="navbar-nav mr-auto">
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuJogos" role="button" data-toggle="dropdown">Jogos</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/jogos/">Lista de Jogos</a>
-                        <a class="dropdown-item" href="/etapas/">Etapas de Desenvolvimento</a>
+                        <a class="dropdown-item" href="/plataformas/">Plataformas</a>
+                        <a class="dropdown-item" href="/jogo_plataformas/">Jogo x Plataforma</a>
+                        <a class="dropdown-item" href="/etapas/">Etapas</a>
                         <a class="dropdown-item" href="/tarefas/">Tarefas</a>
-                        <a class="dropdown-item" href="/assets/">Assets Digitais</a>
+                        <a class="dropdown-item" href="/detalhes_tarefas/">Detalhes de Tarefas</a>
+                        <a class="dropdown-item" href="/componentes/">Componentes</a>
+                        <a class="dropdown-item" href="/assets/">Assets</a>
                         <a class="dropdown-item" href="/cenarios/">Cenários</a>
+                        <a class="dropdown-item" href="/cenarios_assets/">Cenário x Asset</a>
                         <a class="dropdown-item" href="/ocorrencias/">Ocorrências</a>
-                        <a class="dropdown-item" href="/analises/">Formulários de Análise</a>
                     </div>
                 </li>
     
@@ -36,35 +39,40 @@
                         <a class="dropdown-item" href="/membros/">Membros</a>
                         <a class="dropdown-item" href="/funcoes/">Funções</a>
                         <a class="dropdown-item" href="/alocacoes/">Alocações</a>
-                        <a class="dropdown-item" href="/turnos/">Turnos de Trabalho</a>
+                        <a class="dropdown-item" href="/turnos/">Turnos</a>
                     </div>
                 </li>
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuInfra" role="button" data-toggle="dropdown">Infraestrutura</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/estudios/">Estúdios de Desenvolvimento</a>
-                        <a class="dropdown-item" href="/plataformas/">Plataformas de Jogo</a>
+                        <a class="dropdown-item" href="/estudios/">Estúdios</a>
                         <a class="dropdown-item" href="/cidades/">Cidades</a>
                         <a class="dropdown-item" href="/configuracoes/">Configurações</a>
                     </div>
                 </li>
+    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menuAnalise" role="button" data-toggle="dropdown">Análises</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/tipos_analise/">Tipos de Análise</a>
+                        <a class="dropdown-item" href="/AnaliseProcesso/">Analise e Processos</a>
+                    </div>
+                </li>
             </ul>
     
-            <!-- Barra de Busca -->
             <form class="form-inline my-2 my-lg-0 mr-3" method="get" action="/jogos/">
                 <input class="form-control mr-sm-2" type="search" name="q" placeholder="Buscar jogo..." aria-label="Buscar">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
     
-            <!-- Usuário -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuUsuario" role="button" data-toggle="dropdown">
                         <i class="fas fa-user"></i> Conta
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="/usuarios/">Usuários do Sistema</a>
+                        <a class="dropdown-item" href="/usuarios/">Usuários</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/admin/">Administração</a>
                         <a class="dropdown-item" href="#">Sair</a>
@@ -73,6 +81,7 @@
             </ul>
         </div>
     </nav>
+    
     
 
 <div class="container mt-5 pt-4">

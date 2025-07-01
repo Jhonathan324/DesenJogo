@@ -174,13 +174,15 @@ class ComponenteProjetoJogo(models.Model):
         verbose_name_plural = "Componentes do Projeto"
 
 
+
+
 class AssetDigital(models.Model):
-    nome = models.CharField(max_length=100, verbose_name="Nome do asset")
-    tipo = models.CharField(max_length=100, verbose_name="Tipo do asset")
-    caminho = models.CharField(max_length=255, verbose_name="Caminho")
-    versao = models.CharField(max_length=50, verbose_name="Versão")
-    autor = models.CharField(max_length=100, verbose_name="Autor")
-    jogo = models.ForeignKey(Jogo, on_delete=models.CASCADE, verbose_name="Jogo")
+    nome = models.CharField(max_length=100)
+    tipo = models.CharField(max_length=100)
+    arquivo = models.ImageField(upload_to='assets/')  # novo campo
+    versao = models.CharField(max_length=50)
+    autor = models.CharField(max_length=100)
+    jogo = models.ForeignKey(Jogo, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
@@ -190,10 +192,12 @@ class AssetDigital(models.Model):
         verbose_name_plural = "Assets Digitais"
 
 
+
 class Cenario(models.Model):
-    nome = models.CharField(max_length=100, verbose_name="Nome do cenário")
-    descricao = models.TextField(verbose_name="Descrição")
-    jogo = models.ForeignKey(Jogo, on_delete=models.CASCADE, verbose_name="Jogo")
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField(blank=True, null=True)  # campo descrição
+    jogo = models.ForeignKey(Jogo, on_delete=models.CASCADE)
+    arquivo = models.FileField(upload_to='cenarios/', blank=True, null=True)
 
     def __str__(self):
         return self.nome
@@ -201,6 +205,7 @@ class Cenario(models.Model):
     class Meta:
         verbose_name = "Cenário"
         verbose_name_plural = "Cenários"
+
 
 
 class Cenario_Asset(models.Model):

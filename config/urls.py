@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from app.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,10 +37,11 @@ urlpatterns = [
 
     # Análises e Ocorrências
     path('tipos_analise/', TiposAnaliseView.as_view(), name='tipos_analise'),
-    path('formularios/', FormulariosView.as_view(), name='formularios'),
+    path('AnaliseProcessos/', FormulariosView.as_view(), name='AnaliseProcessos'),
     path('ocorrencias/', OcorrenciasView.as_view(), name='ocorrencias'),
 
     # Sistema
     path('usuarios/', UsuariosSistemaView.as_view(), name='usuarios'),
     path('configuracoes/', ConfiguracoesSistemaView.as_view(), name='configuracoes'),
-]
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

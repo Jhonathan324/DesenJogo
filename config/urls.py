@@ -33,7 +33,7 @@ urlpatterns = [
     # Cenários e Assets
     path('cenarios/', CenariosView.as_view(), name='cenarios'),
     path('assets/', AssetsView.as_view(), name='assets'),
-    path('cenarios_assets/', CenarioAssetView.as_view(), name='cenarios_assets'),
+    path('cenarios_assets/', CenarioAssetView.as_view(), name='relacoes'),
 
     # Análises e Ocorrências
     path('tipos_analise/', TiposAnaliseView.as_view(), name='tipos_analise'),

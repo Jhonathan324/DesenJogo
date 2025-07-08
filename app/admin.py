@@ -10,9 +10,7 @@ class JogoPlataformaInline(admin.TabularInline):
     model = Jogo_Plataforma
     extra = 1
 
-class CenarioAssetInline(admin.TabularInline):
-    model = Cenario_Asset
-    extra = 1
+
 
 class AlocacaoInline(admin.TabularInline):
     model = Alocacao
@@ -86,6 +84,7 @@ admin.site.register(Tarefa)
 admin.site.register(TarefaDetalhe)
 admin.site.register(ComponenteProjetoJogo)
 admin.site.register(Cenario, CenarioAdmin)
+admin.site.register(Cenario_Asset)
 admin.site.register(Ocorrencia)
 admin.site.register(AnaliseProcesso)
 admin.site.register(UsuarioSistema)

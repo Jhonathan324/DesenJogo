@@ -6,7 +6,10 @@ from .models import *
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'index.html')
+        jogos = Jogo.objects.all()
+        membros = MembroEquipe.objects.all()
+        tarefas = Tarefa.objects.all()
+        return render(request, 'index.html', {'jogos': jogos,'membros': membros,'tarefas': tarefas})
 
 
 # Jogo e Relacionados

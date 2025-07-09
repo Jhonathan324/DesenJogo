@@ -18,7 +18,7 @@
             {% for turno in turnos %}
             <tr>
                 <td>{{ turno.nome }}</td>
-                <td>
+                <td style="">
                     <a href="/turnos/editar/{{ turno.id }}/" class="btn btn-warning btn-sm">Editar</a>
                     <a href="/turnos/excluir/{{ turno.id }}/" class="btn btn-danger btn-sm">Excluir</a>
                 </td>

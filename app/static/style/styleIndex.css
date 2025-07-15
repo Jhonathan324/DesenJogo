@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(145deg, #100020, #1c0033);
+    background: linear-gradient(black); 
     color: #cfc4ff;
     font-family: 'Orbitron', sans-serif;
     min-height: 100vh;
@@ -40,17 +40,16 @@ nav .btn {
     padding-top: 15px;
     padding-inline: 15px;
     position: relative;
+    background-color: #cfc4ff1c;
 }
+
+
 
 section:first-of-type .container {
     z-index: 0;
     border: 2px solid #e9d3ff;
     clip-path: polygon(
-        0 0,
-        calc(100% - 80px) 0,
-        100% 50px,
-        100% 100%,
-        0 100%
+        0% 0%, 0% 100%, 100% 100%,100% 50px, calc(100% - 90px) 50px,  calc(100% - 90px) 0px
 );
 
 }
@@ -59,15 +58,13 @@ section:first-of-type .container {
     text-align: right;
 }
 
-section:first-of-type .container .col-md-6 img {
-    max-width: 600px;
-    height: auto;
-    margin-top: 20%;
-}
 
 .container .col-md-6 img {
-    max-width: 600px;
-    height: auto;
+    max-height: 600px;
+    width: auto;
+}
+section:first-of-type .container .col-md-6 img {
+    margin-top: 20%;
 }
 
 .jumbotron {

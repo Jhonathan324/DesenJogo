@@ -1,53 +1,97 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DesenJogo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{% static 'style/styleIndex.css' %}" />
+  <link rel="icon" href="{% static 'images/icon.png' %}" type="image/png">
+</head>
+<body class="bg-dark text-light">
 
-{% block content %}
-<div class="container mt-5 pt-4">
-    <div class="jumbotron text-center">
-        <h1 class="display-4">DesenJogo</h1>
-        <p class="lead">Uma plataforma para eficiência e organização no desenvolvimento de jogos digitais</p>
-    </div>
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header">Total de Jogos</div>
-                <div class="card-body">
-                    {% for jogo in jogos %}
-                        <p> ° {{ jogo.titulo }}</p>
-                    {% empty %}
-                        <p>Nenhum jogo cadastrado.</p>
-                    {% endfor %}
-                </div>
-            </div>
+  <!-- Botão de Login no canto direito -->
+  <nav class="botao-login">
+    <a href="/geral/" class="btn btn-outline-success">Login</a>
+  </nav>
+
+  <section class="py-5" style="background: linear-gradient(145deg, #1c0033, #4b0082);">
+    <div class="container" style="width:90vw;">
+      
+      <div class="row align-items-center">
+        <div class="col-md-6 text-white">
+          <h2>DesenJogo</h2>
+          <p>
+            DesenJogo unifica cronogramas, tarefas, assets e análises em um só lugar, permitindo que você gerencie cada fase do desenvolvimento de jogos em tempo real, mantendo prazos claros e sua equipe alinhada para entregas ágeis e de alta qualidade.
+          </p>
+          <a href="#sobre" class="btn btn-outline-success">Saber Mais</a>
         </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header">Membros Ativos</div>
-                <div class="card-body">
-                    {% for membro in membros %}
-                        <p> ° {{ membro.nome }}</p>
-                    {% empty %}
-                        <p>Nenhum membro ativo.</p>
-                    {% endfor %}
-                </div>
-            </div>
+        <div class="col-md-6 lado">
+          <img src="{% static 'images/tela.png' %}" class="img-fluid rounded" alt="Game Preview">
         </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header">Tarefas Pendentes</div>
-                <div class="card-body">
-                    {% for tarefa in tarefas %}
-                        <p> ° {{ tarefa.descricao }}</p>
-                    {% empty %}
-                        <p>Sem tarefas pendentes.</p>
-                    {% endfor %}
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARROSSEL DE CARDS -->
+  <section class="py-5">
+    <div class="container" style="width:90vw;">
+      <h3 class="mb-4">Jogos em Destaque</h3>
+      <div id="cardCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+          {% comment %} Carrossel de cards aqui {% endcomment %}
         </div>
+        <a class="carousel-control-prev" href="#cardCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#cardCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
     </div>
-    <div class="d-flex justify-content-center mt-4">
-        <a href="/jogos/" class="btn btn-primary mx-2">Ver Jogos</a>
-        <a href="/membros/" class="btn btn-success mx-2">Equipe</a>
-        <a href="/tarefas/" class="btn btn-warning mx-2">Gerenciar Tarefas</a>
+  </section>
+
+  <!-- SEÇÕES INFORMATIVAS -->
+  <section id="sobre" class="d-flex align-items-center py-5" style="background: linear-gradient(145deg, #6f42c1, #2c0034);">
+    <div class="container" style="width:90vw;">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'images/controle.png' %}" alt="Gamepad" class="img-fluid">
+        </div>
+        <div class="col-md-6 text-white">
+          <h3>Mantenha o Controle e a Organização</h3>
+          <p>
+            Com DesenJogo você centraliza cronogramas, tarefas e assets em um painel único, garantindo que cada etapa seja monitorada em tempo real e nenhuma atividade fique fora de foco.
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-{% endblock %}
+  </section>
+
+  <section class="d-flex align-items-center py-5" style="background: linear-gradient(145deg, #6f42c1, #2c0034);">
+    <div class="container" style="width:90vw;">
+      <div class="row">
+        <div class="col-md-6 text-white">
+          <h3>Sua Equipe Organizada</h3>
+          <p>
+            Distribua responsabilidades, acompanhe o progresso individual e receba alertas automáticos de pendências, mantendo todos alinhados e produtivos até a entrega final do projeto.
+          </p>
+        </div>
+        <div class="col-md-6 lado">
+          <img src="{% static 'images/equipe.png' %}" alt="Equipe" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="py-3 text-center" style="background: #4b0082;">
+    <small>&copy; 2025 DesenJogo. Todos os direitos reservados.</small>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

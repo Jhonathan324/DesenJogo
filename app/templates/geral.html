@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 pt-4">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">DesenJogo</h1>
+        <p class="lead">Uma plataforma para eficiência e organização no desenvolvimento de jogos digitais</p>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header">Total de Jogos</div>
+                <div class="card-body">
+                    {% for jogo in jogos %}
+                        <p> ° {{ jogo.titulo }}</p>
+                    {% empty %}
+                        <p>Nenhum jogo cadastrado.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header">Membros Ativos</div>
+                <div class="card-body">
+                    {% for membro in membros %}
+                        <p> ° {{ membro.nome }}</p>
+                    {% empty %}
+                        <p>Nenhum membro ativo.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header">Tarefas Pendentes</div>
+                <div class="card-body">
+                    {% for tarefa in tarefas %}
+                        <p> ° {{ tarefa.descricao }}</p>
+                    {% empty %}
+                        <p>Sem tarefas pendentes.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <a href="/jogos/" class="btn btn-primary mx-2">Ver Jogos</a>
+        <a href="/membros/" class="btn btn-success mx-2">Equipe</a>
+        <a href="/tarefas/" class="btn btn-warning mx-2">Gerenciar Tarefas</a>
+    </div>
+</div>
+{% endblock %}

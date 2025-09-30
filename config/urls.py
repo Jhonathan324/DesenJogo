@@ -38,7 +38,7 @@ urlpatterns = [
 
     # Análises e Ocorrências
     path('tipos_analise/', TiposAnaliseView.as_view(), name='tipos_analise'),
-    path('AnaliseProcessos/', FormulariosView.as_view(), name='AnaliseProcessos'),
+    path('analise_processos/', FormulariosView.as_view(), name='analise_processos'),
     path('ocorrencias/', OcorrenciasView.as_view(), name='ocorrencias'),
 
     # Sistema
